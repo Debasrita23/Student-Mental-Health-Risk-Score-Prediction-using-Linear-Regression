@@ -1,4 +1,4 @@
-﻿# Student-Mental-Health-Risk-Score-Prediction-using-Linear-Regression
+
 # 🧠 Student Mental Health Risk Score Prediction using Linear Regression
 
 This project predicts a student's mental health risk score using a **Linear Regression model**. It uses a synthetic dataset with lifestyle-related features to identify how different habits impact mental well-being.
