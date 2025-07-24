@@ -83,8 +83,8 @@ The data is saved to `student_mental_health_data.csv`.
 
 ## 🗂️ File Structure
 
-├── Student_Mental_Health_Risk_Score.ipynb # Jupyter notebook with code & plots
-├── student_mental_health_data.csv # Generated synthetic dataset
-├── README.md # Project description
+ - Student_Mental_Health_Risk_Score.ipynb # Jupyter notebook with code & plots
+ - student_mental_health_data.csv # Generated synthetic dataset
+ - README.md # Project description
 
 
