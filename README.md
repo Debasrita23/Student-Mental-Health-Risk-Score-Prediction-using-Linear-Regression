@@ -1,97 +1,90 @@
-
 # 🧠 Student Mental Health Risk Score Prediction using Linear Regression
 
-This project predicts a student's mental health risk score using a **Linear Regression model**. It uses a synthetic dataset with lifestyle-related features to identify how different habits impact mental well-being.
+This project aims to predict the **mental health risk score** of students using **Linear Regression** based on key behavioral factors. It explores how habits like sleep, study hours, screen time, and social interaction impact a student's mental well-being.
 
 ---
 
 ## 📌 Objective
 
-To build a machine learning model that estimates the **risk score of mental health issues** in students based on the following key behavioral factors:
-
-- Sleep Hours
-- Study Hours
-- Screen Time
-- Social Activity
+To use a regression model to estimate mental health risk from daily lifestyle parameters, identify contributing factors, and visualize their relationships through data plots.
 
 ---
 
-## 📊 Features Used
+## 📂 Dataset
 
-| Feature         | Description                            |
-|----------------|----------------------------------------|
-| `SleepHours`    | Average hours of sleep per day         |
-| `StudyHours`    | Average hours spent studying daily     |
-| `ScreenTime`    | Average screen time in hours per day   |
-| `SocialActivity`| Average hours spent on social activity |
+A **synthetic dataset** is generated using NumPy to simulate 200 students' lifestyle behavior. The dataset includes:
 
----
+| Column           | Description                                 |
+|------------------|---------------------------------------------|
+| `SleepHours`      | Daily average sleep in hours                |
+| `StudyHours`      | Daily average time spent studying           |
+| `ScreenTime`      | Daily screen time usage in hours            |
+| `SocialActivity`  | Daily social interaction time in hours      |
+| `RiskScore`       | Calculated mental health risk score (0–100) |
 
-## 🗂️ Dataset
-
-A synthetic dataset is created using NumPy to simulate data for 200 students, with randomized values in realistic ranges. The target variable `RiskScore` (ranging from 0 to 100) is generated as a linear combination of input features with added noise.
-
-The dataset is saved as:  
-`student_mental_health_data.csv`
+The data is saved to `student_mental_health_data.csv`.
 
 ---
 
-## ⚙️ Technologies Used
+## 🛠️ Tools & Libraries
 
-- Python 🐍
-- NumPy
-- Pandas
+- Python
+- NumPy, Pandas
 - Scikit-learn
-- Seaborn
-- Matplotlib
+- Seaborn, Matplotlib
+- Jupyter Notebook
 
 ---
 
-## 🧮 Workflow
+## 📈 Workflow
 
-1. **Data Generation**
-   - Random values for each feature are generated using `np.random.uniform`.
-   - `RiskScore` is calculated using a custom formula combining all features.
+### 1. **Data Generation & Loading**
+- Created a dataset using random values for sleep, study, screen time, and social activity.
+- RiskScore is computed using a linear formula with added noise.
 
-2. **Data Preprocessing**
-   - Load the CSV using pandas.
-   - Split the data into features (`X`) and target (`y`).
-   - Perform train/test split using `train_test_split`.
+### 2. **Data Visualization**
+- **Scatter plots** between each feature and RiskScore.
+- **Best-fit regression lines** added using `sns.regplot()`.
+- A **correlation heatmap** generated using Seaborn to show inter-feature relationships.
 
-3. **Model Training**
-   - Apply `LinearRegression` from `sklearn.linear_model`.
-   - Train the model on the training dataset.
+### 3. **Model Training**
+- Features: `SleepHours`, `StudyHours`, `ScreenTime`, `SocialActivity`
+- Target: `RiskScore`
+- Train/Test split: 80/20
+- Model: `LinearRegression` from scikit-learn
 
-4. **Model Evaluation**
-   - Predict on test data and compute **R² score**.
-   - Visualize actual vs predicted scores.
-
-5. **Visualization**
-   - Generate **scatter plots** between each feature and `RiskScore`.
-   - Add **best-fit regression lines** to each plot using `sns.regplot()`.
+### 4. **Evaluation**
+- Predicted vs Actual Risk Scores plotted.
+- **R² Score** calculated to evaluate performance.
 
 ---
 
-## 📈 Results
+## 📊 Visual Outputs
 
-- **R² Score** indicates how well the model fits the data.
-- The scatter plots help identify the influence of each factor on mental health risk.
-- Example insight: More screen time or study hours may indicate higher stress/risk, while more sleep or social activity may reduce risk.
+✅ Scatter plots with best-fit lines:
+- `SleepHours` vs `RiskScore`
+- `StudyHours` vs `RiskScore`
+- `ScreenTime` vs `RiskScore`
+- `SocialActivity` vs `RiskScore`
 
----
+✅ Correlation heatmap to identify strong or weak linear relationships between features.
 
-## 📷 Sample Plots
-
-- Feature vs RiskScore scatter plots with regression lines:
-  - Sleep Hours vs Risk Score
-  - Study Hours vs Risk Score
-  - Screen Time vs Risk Score
-  - Social Activity vs Risk Score
-
-*(To see the plots, run the notebook in Jupyter.)*
+✅ Predicted vs Actual Risk Score comparison plot.
 
 ---
 
-## 📁 File Structure
+## 🧮 Result
+
+- The model fits well for a synthetic dataset with an **R² score** indicating how well features explain the risk.
+- Features like **high study hours** or **screen time** showed a positive correlation with risk.
+- Features like **sleep** and **social activity** showed a negative correlation.
+
+---
+
+## 🗂️ File Structure
+
+├── Student_Mental_Health_Risk_Score.ipynb # Jupyter notebook with code & plots
+├── student_mental_health_data.csv # Generated synthetic dataset
+├── README.md # Project description
 
 
